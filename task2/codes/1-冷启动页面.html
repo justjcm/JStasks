@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
+	<title>启动页</title>
+<style>
+*{
+	font-family: '微软雅黑','黑体',sans-serif;
+	margin: 0;
+	padding: 0;
+}
+body{background-color: #33CCCC;}
+.image{
+	width: 80%;
+	height: auto;
+	border: 1px solid black;
+	margin: 0 auto;
+}
+img{
+	width: 40%;
+	height: 40%; 
+	display: block;
+	margin: 30% auto;
+}
+p{
+	font-size: 2vw;
+	color: white;
+	text-align: center;
+	line-height: 6vw;
+}
+</style>
+</head>
+<body>
+	<div class="image">
+		<img src="../pic/冷启动页面.png" alt="">
+		<p>更多&middot;更全&middot;更好用</p>
+	</div>
+</body>
+<script>
+var start = window.location.href='./2-版本选择.html';
+window.onload = setTimeout('start' , 10000);//如何让页面停止一段时间再跳转？
+</script>
+</html>
