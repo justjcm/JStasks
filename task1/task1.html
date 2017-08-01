@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<style type="text/css">
+*{
+	font-family: '微软雅黑','黑体',sans-serif;
+	margin: 0;
+	padding: 0;
+}
+body{
+	/*display: block;*/
+}
+#a{
+	width: 40vw;
+	height: 40vw;
+	overflow: visible;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.b{
+	width: 31%;
+	height: 31%;
+	background: #FFA600; 
+	box-sizing: border-box;
+	margin: 1%;
+	float: left;
+	border-radius: 15%;
+}
+.change{background-color: black;}
+button{
+	width: 50vw;
+	height: 3vw;
+	font-size: 1vw;
+	color: #FFA600;
+	border: 1px solid #FFA600;
+	border-radius: 1vw;
+	background-color: white;
+	margin: 0.4vw 25vw;
+}
+button:hover{
+	color: white;
+	background-color: #FFA600;
+}
+</style>
+</head>
+<body>
+	<div id="a">
+<!-- 	
+		<div class="b"></div>
+		<div class="b"></div>
+		<div class="b"></div>
+
+		<div class="b"></div>
+		<div class="b"></div>
+		<div class="b"></div>
+
+		<div class="b"></div>
+		<div class="b"></div>
+		<div class="b"></div> -->//用JS创建
+	</div>
+	<button id="start">
+		开始闪
+	</button>
+	<button id="stop">
+		结束闪
+	</button>
+</body>
+<script>
+var a = document.getElementById('a');
+var b = document.getElementsByClassName('b');
+function cDiv(className){
+	var div = document.createElement('div');
+	if(className){
+		div.className=className;
+	}
+	div.className='b';
+	return div;
+}//创建div
+for (var i = 0; i < 9; i++) {
+	a.appendChild(cDiv());
+}//将div添加至a中
+function randomColor(){
+	var colorA = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+	var color = "#";
+	for (i=0;i<6;i++){
+		color+=colorA[Math.floor(15*Math.random())];
+	}
+	return color;
+}//创建随机颜色
+function resetColor(){
+		for (i=0;i<9;i++){
+			b[i].style.backgroundColor="orange";
+		}
+	}
+function getBoxcolor(){
+	resetColor();
+	do{
+		var colorBox1=Math.floor(8*Math.random());
+		var colorBox2=Math.floor(8*Math.random());
+		var colorBox3=Math.floor(8*Math.random());
+	}
+ 	while(colorBox1==colorBox2||colorBox2==colorBox3||colorBox1==colorBox3)	//选中三个随机块改变颜色
+	b[colorBox1].style.backgroundColor=randomColor();
+	b[colorBox2].style.backgroundColor=randomColor();
+	b[colorBox3].style.backgroundColor=randomColor();
+}
+var start = document.getElementById('start');
+start.onclick=function(){
+	begin=setInterval("getBoxcolor()","1000");
+}
+var stop = document.getElementById('stop');
+stop.onclick=function(){
+	clearInterval(begin);
+}
+</script>
+</html>
