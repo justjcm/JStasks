@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
-	<title>版本选择</title>
+	<title>狼人杀</title>
 <link rel="stylesheet" href="bootstrap.css">
 <style>
 *{
@@ -35,26 +35,14 @@ input::-webkit-input-placeholder{text-align: center;}
 	padding: 0;
 	margin: 15px auto;
 }
-.title{
-	font-size: 20px;
+img{
+	display: block;
+	margin: 10% auto;
+}
+.row p{
+	text-align: center;
 	color: orange;
-	text-align: center;
-	line-height: 50px;
-	border-bottom: 1px solid orange;
-}
-.typ{
-	width: 90%;
-	height: 100px;
-	background-color: #5AC0CE;
-	font-size: 20px;
-	color: white;
-	text-align: center;
-	line-height: 100px;
-	margin: 3% auto;
-}
-.col-md-12 p{
-	color: gray;
-	text-align: center;
+	font-size: 5vw;
 }
 #tab{
 	width: auto;
@@ -69,14 +57,22 @@ input::-webkit-input-placeholder{text-align: center;}
 	border-radius: 5px;
 	margin: 5px;
 }
-.cir:first-child{border: 5px solid #5AC0CE;}
-#siw{
+.cir:nth-child(2){border: 5px solid #5AC0CE;}
+#siw-r{
 	border-left: 25px solid orange;
 	border-top: 25px solid transparent;
 	border-bottom: 25px solid transparent;
 	position: absolute;
 	top: 75%;
 	right: 6%;
+}
+#siw-l{
+	border-right: 25px solid orange;
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	position: absolute;
+	top: 75%;
+	left: 6%;
 }
 </style>
 </head>
@@ -87,20 +83,10 @@ input::-webkit-input-placeholder{text-align: center;}
  		<span class="input-group-btn"><button class="btn btn-default" type="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></button></span>
 	</div>
 	<div class="row">
-		<div class="title"><p>捉鬼游戏</p></div>
-		<div class="col-md-12">
-			<div id="simple" class="typ">简化版</div>
-			<p>有1133个用户正在玩此款游戏</p>
-		</div>
-		<div class="col-md-12">
-			<div class="typ">猜词版</div>
-			<p>有1133个用户正在玩此款游戏</p>
-		</div>
-		<div class="col-md-12">
-			<div class="typ">白痴版</div>
-			<p>有1133个用户正在玩此款游戏</p>
-		</div>
-		<div id="siw"></div>
+		<img src="../pic/狼人杀.png" class="img-responsive" alt="Responsive image">
+		<p>狼人杀</p>
+		<div id="siw-r"></div>
+		<div id="siw-l"></div>
 		<div id="tab">
 			<div class="cir"></div>
 			<div class="cir"></div>
@@ -110,10 +96,4 @@ input::-webkit-input-placeholder{text-align: center;}
 		</div>
 	</div>
 </body>
-<script>
-var simple = document.getElementById('simple');
-simple.onclick = function(){window.location.href="./task7-投票.html"};
-var siw = document.getElementById('siw');
-siw.onclick = function(){window.location.href="./狼人杀.html"};
-</script>
 </html>
